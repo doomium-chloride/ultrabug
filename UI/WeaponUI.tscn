@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/WeaponUI.gd" type="Script" id=1]
+
+[node name="WeaponUI" type="Label"]
+margin_left = 1.87012
+margin_top = 1.63013
+margin_right = 256.87
+margin_bottom = 90.6301
+custom_colors/font_color = Color( 0.0196078, 0.572549, 0.0666667, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
