@@ -9,6 +9,7 @@ const viral_takeover_class = preload("res://Actors/ViralTakeover.tscn")
 var speed = 600
 const is_player = true
 var last_direction = Global.direction.right
+var was_right = true
 
 const weapons = [
 	"hijack",
@@ -144,14 +145,16 @@ func control_anim(direction, velocity):
 			Global.direction.right:
 				$AnimatedSprite.flip_h = false
 				$AnimatedSprite.animation = "walk-right"
+				was_right = true
 			Global.direction.left:
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.animation = "walk-right"
+				was_right = false
 			Global.direction.down:
-				$AnimatedSprite.flip_h = false
+				$AnimatedSprite.flip_h = not was_right
 				$AnimatedSprite.animation = "walk-right"
 			Global.direction.up:
-				$AnimatedSprite.flip_h = true
+				$AnimatedSprite.flip_h = not was_right
 				$AnimatedSprite.animation = "walk-right"
 	else:
 		match direction:
@@ -162,8 +165,8 @@ func control_anim(direction, velocity):
 				$AnimatedSprite.flip_h = true
 				$AnimatedSprite.animation = "idle-right"
 			Global.direction.down:
-				$AnimatedSprite.flip_h = false
+				$AnimatedSprite.flip_h = not was_right
 				$AnimatedSprite.animation = "idle-right"
 			Global.direction.up:
-				$AnimatedSprite.flip_h = true
+				$AnimatedSprite.flip_h = not was_right
 				$AnimatedSprite.animation = "idle-right"
