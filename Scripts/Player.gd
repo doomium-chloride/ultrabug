@@ -139,7 +139,6 @@ func get_last_direction(velocity):
 
 func control_anim(direction, velocity):
 	var is_moving = velocity.length() > 0
-	print(is_moving)
 	if is_moving:
 		match direction:
 			Global.direction.right:

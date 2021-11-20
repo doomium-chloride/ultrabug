@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
@@ -8,36 +8,27 @@ export var speed = 1000
 var direction = Vector2.ZERO
 var origin = null
 var dmg = 1
-var bounces = 5
+var bounces = 10
+var bounce_cooldown = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _physics_process(delta):
-	translate(direction * speed * delta)
+	move_and_slide(direction * speed)
+	process_collisions()
 
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+func process_collisions():
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		bounce(collision)
 
-
-
-func _on_Bullet_body_entered(body):
-	if body == origin:
-		return
-	if body == null:
-		return
-	if body.has_method("take_dmg") and body.get("taken_over") != true:
-		body.take_dmg(dmg, origin)
-		queue_free()
 
 func bounce(collision):
+	if bounce_cooldown:
+		return
 	bounces -= 1
 	if bounces <= 0:
 		queue_free()
@@ -45,7 +36,20 @@ func bounce(collision):
 	var normal = collision.normal
 	if abs(normal.x) > abs(normal.y):
 		direction.x *= -1
-	elif abs(normal.x) < abs(normal.y):
+	if abs(normal.x) < abs(normal.y):
 		direction.y *= -1
-	else:
-		direction *= -1
+	
+	if collision.collider.has_method("take_dmg"):
+		collision.collider.take_dmg(dmg)
+		
+	bounce_cooldown = true
+	$BounceCooldown.start()
+
+
+func _on_Timer_timeout():
+	set_collision_layer_bit(0, true)
+	set_collision_mask_bit(0, true)
+
+
+func _on_BounceCooldown_timeout():
+	bounce_cooldown = false

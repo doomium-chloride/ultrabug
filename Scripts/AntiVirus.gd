@@ -11,7 +11,7 @@ var target = null
 var stuttering = false
 var stutter_flip = false
 var chase_boost = 4
-
+const is_antivirus = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
