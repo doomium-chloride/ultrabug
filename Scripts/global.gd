@@ -17,6 +17,9 @@ signal add_chip
 signal reset_chip(chips)
 signal add_wall_count
 signal reset_wall_count(count)
+signal set_hp(hp)
+signal update_hp(hp)
+signal clean_up
 
 
 enum direction {

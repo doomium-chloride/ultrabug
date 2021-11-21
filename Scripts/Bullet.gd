@@ -10,10 +10,11 @@ var origin = null
 var dmg = 1
 var bounces = 10
 var bounce_cooldown = false
+var has_bounced = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.connect("clean_up", self, "clear_self")
 
 func _physics_process(delta):
 	move_and_slide(direction * speed)
@@ -25,6 +26,8 @@ func process_collisions():
 		var collision = get_slide_collision(i)
 		bounce(collision)
 
+func clear_self():
+	queue_free()
 
 func bounce(collision):
 	if bounce_cooldown:
@@ -39,15 +42,19 @@ func bounce(collision):
 	if abs(normal.x) < abs(normal.y):
 		direction.y *= -1
 	
-	if collision.collider.has_method("take_dmg"):
-		collision.collider.take_dmg(dmg)
-		
+	if  is_instance_valid(collision.collider) and collision.collider.has_method("take_dmg"):
+		if has_bounced:
+			collision.collider.take_dmg(dmg)
+		else:
+			collision.collider.take_dmg(dmg, origin)
+			
+	has_bounced = true
 	bounce_cooldown = true
 	$BounceCooldown.start()
 
 
 func _on_Timer_timeout():
-	set_collision_layer_bit(0, true)
+	#set_collision_layer_bit(0, true)
 	set_collision_mask_bit(0, true)
 
 
