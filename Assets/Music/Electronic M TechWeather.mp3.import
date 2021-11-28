@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Electronic M TechWeather.mp3-770570b76a9b0d3ece2ad6069fa84f0b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Electronic M TechWeather.mp3"
+dest_files=[ "res://.import/Electronic M TechWeather.mp3-770570b76a9b0d3ece2ad6069fa84f0b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

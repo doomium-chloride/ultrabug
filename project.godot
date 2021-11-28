@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Bug"
-run/main_scene="res://Maps/TestLevel.tscn"
+run/main_scene="res://Screens/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -77,6 +77,16 @@ prev_weapon={
 god_mode={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":71,"unicode":0,"echo":false,"script":null)
+ ]
+}
+collision_off={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":75,"unicode":0,"echo":false,"script":null)
+ ]
+}
+get_chips={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":true,"shift":true,"control":true,"meta":false,"command":true,"pressed":false,"scancode":67,"unicode":0,"echo":false,"script":null)
  ]
 }
 

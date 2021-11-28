@@ -15,7 +15,7 @@ var hp = max_hp
 var god_mode = false
 
 const weapons = [
-	"hijack",
+	"infect",
 	"lag",
 	"stealth"
 ]
@@ -27,12 +27,6 @@ func _ready():
 	cycle_weapon(0)
 	Global.connect("ready_weapon", self, "cycle_weapon", [0])
 	Global.emit_signal("set_hp", max_hp)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_pressed("god_mode"):
-		god_mode = true
 
 func _physics_process(delta):
 	var move_vec = Vector2()
@@ -49,6 +43,7 @@ func _physics_process(delta):
 	control_anim(direction, velocity)
 
 func _input(event):
+	check_cheats()
 	if event.is_action_pressed("click_left"):
 		if $MainCooldown.is_stopped():
 			shoot_bullet(get_mouse_pos())
@@ -98,7 +93,7 @@ func cycle_weapon(steps):
 	Global.emit_signal("change_weapon", weapons[index])
 
 func use_weapon(pos):
-	if current_weapon == 0:#hijack
+	if current_weapon == 0:#infect
 		viral_takeover(pos)
 	elif current_weapon == 1:#lag
 		if not Global.lag:
@@ -180,3 +175,14 @@ func take_dmg(dmg, origin = null):
 	if hp <= 0:
 		Global.emit_signal("clean_up")
 		Global.goto_scene("res://Screens/Lose.tscn")
+	else:
+		$HitSound.play()
+
+func check_cheats():
+	if Input.is_action_pressed("god_mode"):
+		god_mode = true
+	elif Input.is_action_pressed("collision_off"):
+		collision_mask = 0
+		collision_layer = 0
+	elif Input.is_action_pressed("get_chips"):
+		Global.emit_signal("add_chip")

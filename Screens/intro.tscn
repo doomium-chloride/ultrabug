@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/voice/at_long_last.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/intro.gd" type="Script" id=2]
+[ext_resource path="res://SFX/491947__cmilo1269__light-switch.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/voice/the_ultimate.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/voice/brick.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/voice/superbug.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/scene/bugman1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/scene/bugman2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/scene/ultrabug.png" type="Texture" id=9]
+[ext_resource path="res://Assets/scene/uploading.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "claws",
+"speed": 10.0
+} ]
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voices" type="Node" parent="."]
+
+[node name="AtLongLast" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Lightswitch" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 3 )
+
+[node name="TheUltimate" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 4 )
+
+[node name="SuperBug" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 6 )
+
+[node name="Brick" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 5 )
+
+[node name="Images" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Images"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bug1" type="TextureRect" parent="Images"]
+visible = false
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bug2" type="AnimatedSprite" parent="Images"]
+visible = false
+frames = SubResource( 1 )
+animation = "claws"
+frame = 1
+playing = true
+centered = false
+
+[node name="Super" type="TextureRect" parent="Images"]
+visible = false
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upload" type="TextureRect" parent="Images"]
+visible = false
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="LightPause" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="Skip" type="Control" parent="."]
+visible = false
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="Skip"]
+margin_left = 328.098
+margin_top = 181.373
+margin_right = 362.098
+margin_bottom = 201.373
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="No" type="Button" parent="Skip"]
+margin_left = 253.862
+margin_top = 181.376
+margin_right = 283.862
+margin_bottom = 201.376
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Skip"]
+margin_left = 274.357
+margin_top = 145.31
+margin_right = 341.357
+margin_bottom = 159.31
+text = "Skip Intro?"
+
+[connection signal="finished" from="Voices/AtLongLast" to="." method="_on_AtLongLast_finished"]
+[connection signal="finished" from="Voices/Lightswitch" to="." method="_on_Lightswitch_finished"]
+[connection signal="finished" from="Voices/TheUltimate" to="." method="_on_TheUltimate_finished"]
+[connection signal="finished" from="Voices/SuperBug" to="." method="_on_SuperBug_finished"]
+[connection signal="finished" from="Voices/Brick" to="." method="_on_Brick_finished"]
+[connection signal="timeout" from="Timers/LightPause" to="." method="_on_LightPause_timeout"]
+[connection signal="pressed" from="Skip/Yes" to="." method="_on_Yes_pressed"]
+[connection signal="pressed" from="Skip/No" to="." method="_on_No_pressed"]

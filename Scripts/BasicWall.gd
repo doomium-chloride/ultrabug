@@ -14,5 +14,15 @@ func take_dmg(dmg, origin = null):
 	if dmg <= max_hp/2:
 		$Sprite.animation = "broken"
 	if hp <= 0:
-		Global.emit_signal("add_wall_count")
-		queue_free()
+		destroy_self()
+
+func destroy_self():
+	$DestroySound.play()
+	Global.emit_signal("add_wall_count")
+	visible = false
+	collision_layer = 0
+	collision_mask = 0
+
+
+func _on_DestroySound_finished():
+	queue_free()

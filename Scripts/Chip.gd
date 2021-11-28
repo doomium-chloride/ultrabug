@@ -16,5 +16,15 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.get("is_player") == true:
-		Global.emit_signal("add_chip")
-		queue_free()
+		pickup()
+
+func pickup():
+	Global.emit_signal("add_chip")
+	$AudioStreamPlayer.play()
+	visible = false
+	collision_layer = 0
+	collision_mask = 0
+
+func _on_AudioStreamPlayer_finished():
+	queue_free()
+	visible = false

@@ -80,7 +80,7 @@ func take_dmg(dmg, origin = null):
 	else:
 		$AudioStreamPlayer.play()
 	if origin != null:
-		if origin.get("is_player") == true:
+		if origin.get("is_player") == true and not taken_over:
 			target = origin
 
 func take_over():

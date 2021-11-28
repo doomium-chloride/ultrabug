@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dream Freedom.mp3-d8320ba219b2698a4b8fc3dd60263619.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dream Freedom.mp3"
+dest_files=[ "res://.import/Dream Freedom.mp3-d8320ba219b2698a4b8fc3dd60263619.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

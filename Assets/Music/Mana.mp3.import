@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mana.mp3-deab210f27b2bb49087285ecff6dbf7e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Mana.mp3"
+dest_files=[ "res://.import/Mana.mp3-deab210f27b2bb49087285ecff6dbf7e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

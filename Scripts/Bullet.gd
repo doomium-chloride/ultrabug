@@ -41,6 +41,9 @@ func bounce(collision):
 		direction.x *= -1
 	if abs(normal.x) < abs(normal.y):
 		direction.y *= -1
+	var jiggled_direction = Global.jiggle_vector2(direction)
+	direction.x = jiggled_direction.x
+	direction.y = jiggled_direction.y
 	
 	if  is_instance_valid(collision.collider) and collision.collider.has_method("take_dmg"):
 		if has_bounced:

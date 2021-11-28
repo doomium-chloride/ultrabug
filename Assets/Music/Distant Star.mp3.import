@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Distant Star.mp3-665c45e831cf5e7c4815784401c8cf8d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Distant Star.mp3"
+dest_files=[ "res://.import/Distant Star.mp3-665c45e831cf5e7c4815784401c8cf8d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

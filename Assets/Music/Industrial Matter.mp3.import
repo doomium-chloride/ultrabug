@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Industrial Matter.mp3-56b63efe47e96f52082a857482051ca1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Industrial Matter.mp3"
+dest_files=[ "res://.import/Industrial Matter.mp3-56b63efe47e96f52082a857482051ca1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

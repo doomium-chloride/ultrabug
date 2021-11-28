@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+func _on_Button_pressed():
+	Global.goto_scene(\"res://Screens/Menu.tscn\")
+"
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 343.905
+margin_top = 124.136
+margin_right = 605.905
+margin_bottom = 185.136
+rect_scale = Vector2( 3, 3 )
+text = "Art: Matthew Whitta
+Programming: doomium-chloride
+Music and SFX: CC0 and public domain"
+readonly = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 654.0
+margin_top = 431.0
+margin_right = 709.0
+margin_bottom = 451.0
+rect_scale = Vector2( 2, 2 )
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dream of the Insomniac.mp3-73601b9d255d547d36bb6c3ec0592089.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dream of the Insomniac.mp3"
+dest_files=[ "res://.import/Dream of the Insomniac.mp3-73601b9d255d547d36bb6c3ec0592089.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

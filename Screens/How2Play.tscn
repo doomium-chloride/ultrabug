@@ -1,0 +1,301 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Walls/Barrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls/breakable/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Chip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/blue-bug-2.png" type="Texture" id=4]
+[ext_resource path="res://Actors/AntiVirus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/How2Play.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Music/Sciencenet Theme.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=13]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 13 )]
+position = Vector2( -134.372, 110.792 )
+
+[node name="Barriers" type="Node" parent="."]
+
+[node name="Barrier" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 919.637, -117.005 )
+scale = Vector2( 30, 1 )
+
+[node name="Barrier2" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( -559.666, 1050.79 )
+scale = Vector2( 1, 22 )
+
+[node name="Barrier3" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 919.853, 2212.56 )
+scale = Vector2( 30, 1 )
+
+[node name="Barrier4" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 244.21, 845.665 )
+scale = Vector2( 1, 18 )
+
+[node name="Barrier5" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 1238.71, 1263.22 )
+scale = Vector2( 1, 18 )
+
+[node name="Barrier6" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 2400.58, 1041.38 )
+scale = Vector2( 1, 22 )
+
+[node name="TutorialTexts" type="Node" parent="."]
+
+[node name="WASD" type="TextEdit" parent="TutorialTexts"]
+margin_right = 168.0
+margin_bottom = 132.0
+rect_scale = Vector2( 3, 3 )
+text = "You are a bug!
+
+It is your duty to destroy computers!
+
+Move using WASD or the arrow keys."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walls and chips" type="TextEdit" parent="TutorialTexts"]
+margin_left = 1.0
+margin_top = 458.0
+margin_right = 169.0
+margin_bottom = 605.0
+rect_scale = Vector2( 3, 3 )
+text = "The computer is made up of walls and chips.
+
+To destroy the computer you must destroy enough walls and collect enough chips."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wall and chip ui" type="TextEdit" parent="TutorialTexts"]
+margin_left = -1.0
+margin_top = 916.0
+margin_right = 167.0
+margin_bottom = 1065.0
+rect_scale = Vector2( 3, 3 )
+text = "The amount of walls to destroy and chips to collect are displayed on the top right.
+
+Fullfil the chip and wall quota to complete the mission"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryPrompt" type="TextEdit" parent="TutorialTexts"]
+margin_left = 5.0
+margin_top = 1385.0
+margin_right = 173.0
+margin_bottom = 1516.0
+rect_scale = Vector2( 3, 3 )
+text = "Try destroying some walls and collecting a chip.
+Left click to shoot.
+Also don't shoot yourself, your bullets bounce!"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShootAntivirus" type="TextEdit" parent="TutorialTexts"]
+margin_left = 997.003
+margin_top = 1665.42
+margin_right = 1165.0
+margin_bottom = 1844.42
+rect_scale = Vector2( 3, 3 )
+text = "The computer system has some defences in place.
+
+They look like this: 
+
+You need to eliminate them before they eliminate you."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Superweapon" type="TextEdit" parent="TutorialTexts"]
+margin_left = 985.017
+margin_top = 749.885
+margin_right = 1153.02
+margin_bottom = 945.885
+rect_scale = Vector2( 3, 3 )
+text = "You have access to certain super weapons.
+
+Hold right click to charge it, then release to activate the super weapon.
+
+You have \"infect\", \"lag\" and \"stealth\"."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infect" type="TextEdit" parent="TutorialTexts"]
+margin_left = 984.0
+margin_top = 273.0
+margin_right = 1152.0
+margin_bottom = 426.0
+rect_scale = Vector2( 3, 3 )
+text = "To switch super weapons use the mousewheel.
+
+Infect turns a weakened enemy to your side.
+An enemy is weakened when it blinks."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lag" type="TextEdit" parent="TutorialTexts"]
+margin_left = 2172.0
+margin_top = -55.0
+margin_right = 2340.0
+margin_bottom = 66.0
+rect_scale = Vector2( 3, 3 )
+text = "Lag makes enemies roughly 80% slower.
+
+Milage may vary depending on the computer's scheduler."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stealth" type="TextEdit" parent="TutorialTexts"]
+margin_left = 2145.0
+margin_top = 661.0
+margin_right = 2313.0
+margin_bottom = 743.0
+rect_scale = Vector2( 3, 3 )
+text = "Stealth makes you invulnerable and undetectable for 0.5 secs."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fin" type="TextEdit" parent="TutorialTexts"]
+margin_left = 2147.52
+margin_top = 1477.43
+margin_right = 2315.52
+margin_bottom = 1559.43
+rect_scale = Vector2( 3, 3 )
+text = "The tutorial has ended.
+
+Collect the final chip to finish."
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BugBackground" type="ColorRect" parent="TutorialTexts"]
+margin_left = 1366.0
+margin_top = 1831.0
+margin_right = 1458.0
+margin_bottom = 1897.0
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bug" type="TextureRect" parent="TutorialTexts"]
+margin_left = 1369.25
+margin_top = 1840.56
+margin_right = 1412.25
+margin_bottom = 1880.56
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stuff" type="Node" parent="."]
+
+[node name="Box" parent="Stuff" instance=ExtResource( 2 )]
+position = Vector2( 99.2345, 1829.74 )
+
+[node name="Chip" parent="Stuff" instance=ExtResource( 3 )]
+position = Vector2( 239.783, 1972.08 )
+
+[node name="Box2" parent="Stuff" instance=ExtResource( 2 )]
+position = Vector2( 879.785, 1361.54 )
+
+[node name="AntiVirus" parent="Stuff" instance=ExtResource( 5 )]
+position = Vector2( 1027.91, 1537.35 )
+direction = Vector2( -1, 2 )
+
+[node name="Box3" parent="Stuff" instance=ExtResource( 2 )]
+position = Vector2( 1090.92, -36.6881 )
+
+[node name="AntiVirus2" parent="Stuff" instance=ExtResource( 5 )]
+position = Vector2( 1234.9, 112.697 )
+direction = Vector2( 1, 0 )
+
+[node name="Box4" parent="Stuff" instance=ExtResource( 2 )]
+position = Vector2( 2035.28, 339.271 )
+
+[node name="AntiVirus3" parent="Stuff" instance=ExtResource( 5 )]
+position = Vector2( 2179.25, 488.656 )
+direction = Vector2( 1, 0 )
+
+[node name="Box5" parent="Stuff" instance=ExtResource( 2 )]
+position = Vector2( 2033.49, 939.737 )
+
+[node name="AntiVirus4" parent="Stuff" instance=ExtResource( 5 )]
+position = Vector2( 2177.47, 1089.12 )
+direction = Vector2( 1, 0 )
+
+[node name="Chip2" parent="Stuff" instance=ExtResource( 3 )]
+position = Vector2( 2135.96, 1998.32 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true

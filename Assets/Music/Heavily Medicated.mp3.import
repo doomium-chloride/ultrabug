@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heavily Medicated.mp3-d34ba1c367fa824bf528a93833c1c980.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Heavily Medicated.mp3"
+dest_files=[ "res://.import/Heavily Medicated.mp3-d34ba1c367fa824bf528a93833c1c980.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

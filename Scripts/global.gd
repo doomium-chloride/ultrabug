@@ -1,10 +1,15 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
 var main_menu = null
 
 var current_scene = null
+var last_level = null
 
 var lag = false
+
+var time = 0
 
 signal change_weapon(name)
 signal ready_weapon
@@ -20,6 +25,9 @@ signal reset_wall_count(count)
 signal set_hp(hp)
 signal update_hp(hp)
 signal clean_up
+signal set_last_level(level)
+signal time(time)
+signal reset_time
 
 
 enum direction {
@@ -32,10 +40,20 @@ enum direction {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	rng.randomize()
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 	connect("start_lag", self, "start_lag")
 	connect("end_lag", self, "end_lag")
+	connect("set_last_level", self, "_set_last_level")
+	connect("reset_time", self, "reset_time")
+
+func _process(delta):
+	time += delta
+	emit_signal("time", time)
+
+func reset_time():
+	time = 0
 
 func start_lag():
 	lag = true
@@ -58,22 +76,21 @@ func random_direction():
 	var vector = Vector2(x, y)
 	return vector.normalized()
 
-func goto_scene(path):
-	# This function will usually be called from a signal callback,
-	# or some other function in the current scene.
-	# Deleting the current scene at this point is
-	# a bad idea, because it may still be executing code.
-	# This will result in a crash or unexpected behavior.
+func jiggle_vector2(direction):
+	var spread = 2.5
+	var deg = rng.randf_range(-spread, spread)
+	var rads = deg2rad(deg)
+	return direction.rotated(rads)
 
-	# The solution is to defer the load to a later time, when
-	# we can be sure that no code from the current scene is running:
-	emit_signal("free_self")
+func goto_scene(path):
+	lag = false
+	emit_signal("clean_up")
 	call_deferred("_deferred_goto_scene", path)
 
 
 func _deferred_goto_scene(path):
 	# Clear and reset some stuff
-
+	
 	# It is now safe to remove the current scene
 	current_scene.free()
 
@@ -91,3 +108,6 @@ func _deferred_goto_scene(path):
 
 func scale2(scale):
 	return Vector2(scale, scale)
+
+func _set_last_level(level):
+	last_level = level

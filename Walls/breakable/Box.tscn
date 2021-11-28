@@ -1,33 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Walls/breakable/BasicWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls/breakable/Vwall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Walls/breakable/Hwall.tscn" type="PackedScene" id=3]
 
 [node name="Box" type="Node2D"]
 
-[node name="Side1" type="Node2D" parent="."]
-
-[node name="BasicWall" parent="Side1" instance=ExtResource( 1 )]
-
-[node name="BasicWall2" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 40 )
-
-[node name="BasicWall3" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 80 )
-
-[node name="BasicWall4" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 120 )
-
-[node name="BasicWall5" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 160 )
-
-[node name="BasicWall6" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 200 )
-
-[node name="BasicWall7" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 240 )
-
-[node name="BasicWall8" parent="Side1" instance=ExtResource( 1 )]
-position = Vector2( 0, 280 )
+[node name="Side1" parent="." instance=ExtResource( 2 )]
 
 [node name="Side2" type="Node2D" parent="."]
 position = Vector2( 280, 0 )
@@ -55,25 +34,7 @@ position = Vector2( 0, 240 )
 [node name="BasicWall8" parent="Side2" instance=ExtResource( 1 )]
 position = Vector2( 0, 280 )
 
-[node name="Side3" type="Node2D" parent="."]
-
-[node name="BasicWall" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 40, 0 )
-
-[node name="BasicWall2" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 80, 0 )
-
-[node name="BasicWall3" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 120, 0 )
-
-[node name="BasicWall4" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 160, 0 )
-
-[node name="BasicWall5" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 200, 0 )
-
-[node name="BasicWall6" parent="Side3" instance=ExtResource( 1 )]
-position = Vector2( 240, 0 )
+[node name="Side3" parent="." instance=ExtResource( 3 )]
 
 [node name="Side4" type="Node2D" parent="."]
 position = Vector2( 0, 280 )

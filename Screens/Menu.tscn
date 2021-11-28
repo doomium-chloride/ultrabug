@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 149.831
+margin_top = 266.698
+margin_right = 187.831
+margin_bottom = 286.698
+rect_scale = Vector2( 3, 3 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 124.36
+margin_top = 338.617
+margin_right = 181.36
+margin_bottom = 358.617
+rect_scale = Vector2( 3, 3 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="Button" parent="."]
+margin_left = 120.614
+margin_top = 408.288
+margin_right = 180.614
+margin_bottom = 428.288
+rect_scale = Vector2( 3, 3 )
+text = "Tutorial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 155.824
+margin_top = 475.712
+margin_right = 190.824
+margin_bottom = 495.712
+rect_scale = Vector2( 3, 3 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

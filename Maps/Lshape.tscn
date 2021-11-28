@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Walls/Barrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls/breakable/Vwall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Walls/breakable/Hwall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/AntiVirus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actors/Chip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Lshape.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Music/Industrial Matter - 152.mp3" type="AudioStream" id=8]
+
+[node name="Lshape" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Vwall" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 423.226, -80.5015 )
+
+[node name="Vwall2" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 800, 10 )
+
+[node name="Vwall3" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1200, -104.44 )
+
+[node name="Vwall4" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1460, -1000 )
+
+[node name="Vwall5" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1349.24, 9.60156 )
+
+[node name="Hwall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1300, -200 )
+
+[node name="Hwall2" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1300, -500 )
+
+[node name="Hwall3" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1300, -500 )
+
+[node name="Hwall4" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1300, -1040 )
+
+[node name="Barrier" type="Node" parent="."]
+
+[node name="Barrier" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 0, 105 )
+scale = Vector2( 1, 6 )
+
+[node name="Barrier4" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 1615.15, -505 )
+scale = Vector2( 1, 16 )
+
+[node name="Barrier5" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 1311.82, -710 )
+scale = Vector2( 1, 12 )
+
+[node name="Barrier2" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 849.498, 360 )
+scale = Vector2( 16, 1 )
+
+[node name="Barrier3" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 700, -150 )
+scale = Vector2( 13, 1 )
+
+[node name="Barrier6" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 1466.73, -1270.96 )
+scale = Vector2( 3, 1 )
+
+[node name="Barrier7" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 423, 271 )
+
+[node name="Barrier8" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 800.643, -60.1041 )
+
+[node name="Antivirus" type="Node" parent="."]
+
+[node name="AntiVirus" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 1293.62, 171.999 )
+direction = Vector2( 1, 1 )
+
+[node name="AntiVirus2" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 1523.26, -854.185 )
+direction = Vector2( 0, 1 )
+
+[node name="AntiVirus3" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 1408.71, -848.528 )
+direction = Vector2( 0, -1 )
+
+[node name="Chips" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 150, 0 )
+
+[node name="Chip" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1457.66, -1135.4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true

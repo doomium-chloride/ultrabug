@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sciencenet Theme.mp3-b7a072b42c6442a5dd31e66f56675bbd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Sciencenet Theme.mp3"
+dest_files=[ "res://.import/Sciencenet Theme.mp3-b7a072b42c6442a5dd31e66f56675bbd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

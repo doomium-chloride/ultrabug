@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/491947__cmilo1269__light-switch.wav-b065007759f01bc9535504c3d970212b.sample"
+
+[deps]
+
+source_file="res://SFX/491947__cmilo1269__light-switch.wav"
+dest_files=[ "res://.import/491947__cmilo1269__light-switch.wav-b065007759f01bc9535504c3d970212b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

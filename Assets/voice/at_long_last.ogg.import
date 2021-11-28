@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/at_long_last.ogg-02a4f4fd938b442043299cd83e67994c.oggstr"
+
+[deps]
+
+source_file="res://Assets/voice/at_long_last.ogg"
+dest_files=[ "res://.import/at_long_last.ogg-02a4f4fd938b442043299cd83e67994c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
