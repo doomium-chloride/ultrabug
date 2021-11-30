@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Walls/Barrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls/Firewall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Walls/breakable/Vwall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Walls/breakable/Hwall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/AntiVirus.tscn" type="PackedScene" id=4]
@@ -8,89 +8,137 @@
 [ext_resource path="res://Actors/Chip.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Lshape.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Music/Industrial Matter - 152.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Walls/ManyFirewalls.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Walls/2Firewalls.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Walls/Firewalls.tscn" type="PackedScene" id=11]
 
 [node name="Lshape" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Walls" type="Node" parent="."]
+[node name="Walls" type="Node2D" parent="."]
 
 [node name="Vwall" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 423.226, -80.5015 )
+position = Vector2( -81.6122, -54.7571 )
 
 [node name="Vwall2" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 800, 10 )
+position = Vector2( 279.177, 52.6536 )
 
 [node name="Vwall3" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 1200, -104.44 )
+position = Vector2( 678.744, -13.3262 )
 
 [node name="Vwall4" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 1460, -1000 )
+position = Vector2( 939.3, -13.0777 )
 
 [node name="Vwall5" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 1349.24, 9.60156 )
+position = Vector2( 811.033, 9.60156 )
+
+[node name="Vwall6" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1073.78, 10.661 )
+
+[node name="Vwall7" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1360.89, -728.844 )
+
+[node name="Vwall8" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1501.8, -726.725 )
 
 [node name="Hwall" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 1300, -200 )
+position = Vector2( 1341.94, -124.778 )
 
 [node name="Hwall2" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 1300, -500 )
+position = Vector2( 1243.85, -187.458 )
 
 [node name="Hwall4" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 1300, -1040 )
+position = Vector2( 1343.73, -984.331 )
 
-[node name="Barrier" type="Node" parent="."]
+[node name="Hwall5" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1243.08, -923.941 )
 
-[node name="Barrier" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 0, 105 )
-scale = Vector2( 1, 6 )
+[node name="Hwall6" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1289.69, -769.26 )
 
-[node name="Barrier4" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 1615.15, -505 )
-scale = Vector2( 1, 16 )
+[node name="Hwall7" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1293.93, -407.983 )
 
-[node name="Barrier5" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 1311.82, -710 )
-scale = Vector2( 1, 12 )
+[node name="Barrier" type="Node2D" parent="."]
 
-[node name="Barrier2" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 849.498, 360 )
-scale = Vector2( 16, 1 )
+[node name="Firewall" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( -82.0105, 318.844 )
+rotation = 3.14159
 
-[node name="Barrier3" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 700, -150 )
-scale = Vector2( 13, 1 )
+[node name="Firewall2" parent="Barrier" instance=ExtResource( 1 )]
+position = Vector2( 282.79, -40.3434 )
 
-[node name="Barrier6" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 1466.73, -1270.96 )
-scale = Vector2( 3, 1 )
+[node name="walls1" type="Node2D" parent="Barrier"]
+position = Vector2( -1.33484, 65.4072 )
 
-[node name="Barrier7" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 423, 271 )
+[node name="2Firewalls" parent="Barrier/walls1" instance=ExtResource( 10 )]
+position = Vector2( 187.804, -170.987 )
 
-[node name="Barrier8" parent="Barrier" instance=ExtResource( 1 )]
-position = Vector2( 800.643, -60.1041 )
+[node name="Firewalls" parent="Barrier/walls1" instance=ExtResource( 11 )]
+position = Vector2( -377.31, -170.987 )
+
+[node name="Firewall" parent="Barrier/walls1" instance=ExtResource( 1 )]
+position = Vector2( -490.016, -170.987 )
+
+[node name="ManyWalls" parent="Barrier" instance=ExtResource( 9 )]
+position = Vector2( 1656.67, 382.452 )
+rotation = -3.14159
+
+[node name="2Firewalls2" parent="Barrier" instance=ExtResource( 10 )]
+position = Vector2( 1191.44, -202.203 )
+rotation = -1.5708
+
+[node name="Firewalls2" parent="Barrier" instance=ExtResource( 11 )]
+position = Vector2( 1208.62, -1237.31 )
+
+[node name="Firewalls3" parent="Barrier" instance=ExtResource( 11 )]
+position = Vector2( -509.619, 362.783 )
+rotation = -1.5708
+
+[node name="2Firewalls" parent="Barrier" instance=ExtResource( 10 )]
+position = Vector2( 1674.8, -1219.2 )
+rotation = 1.5708
+
+[node name="Firewalls" parent="Barrier" instance=ExtResource( 11 )]
+position = Vector2( 1674.06, -87.5615 )
+rotation = 1.5708
 
 [node name="Antivirus" type="Node" parent="."]
 
 [node name="AntiVirus" parent="Antivirus" instance=ExtResource( 4 )]
-position = Vector2( 1293.62, 171.999 )
+position = Vector2( 134.567, 127.502 )
 direction = Vector2( 1, 1 )
 
+[node name="AntiVirus5" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 875.132, 137.037 )
+direction = Vector2( -1, 3 )
+
+[node name="AntiVirus6" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 1405.92, 139.156 )
+direction = Vector2( -2, -1 )
+
 [node name="AntiVirus2" parent="Antivirus" instance=ExtResource( 4 )]
-position = Vector2( 1523.26, -854.185 )
+position = Vector2( 1568.86, -585.572 )
+direction = Vector2( 0, 1 )
+
+[node name="AntiVirus4" parent="Antivirus" instance=ExtResource( 4 )]
+position = Vector2( 1296.58, -581.334 )
 direction = Vector2( 0, 1 )
 
 [node name="AntiVirus3" parent="Antivirus" instance=ExtResource( 4 )]
-position = Vector2( 1408.71, -848.528 )
+position = Vector2( 1435.55, -586.387 )
 direction = Vector2( 0, -1 )
 
 [node name="Chips" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 150, 0 )
+position = Vector2( -279.88, 123.291 )
 
 [node name="Chip" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1457.66, -1135.4 )
+position = Vector2( 1424.82, -1093.02 )
+
+[node name="Chip2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1432.83, -676.551 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

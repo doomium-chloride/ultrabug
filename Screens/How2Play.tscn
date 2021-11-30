@@ -1,47 +1,107 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Walls/Barrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls/ManyFirewalls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Walls/breakable/Box.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Chip.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/blue-bug-2.png" type="Texture" id=4]
 [ext_resource path="res://Actors/AntiVirus.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/How2Play.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Music/Sciencenet Theme.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Walls/Firewalls.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Walls/2Firewall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Walls/2Firewalls.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Walls/Firewall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=13]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
-position = Vector2( -134.372, 110.792 )
+position = Vector2( -137.369, 316.06 )
 
-[node name="Barriers" type="Node" parent="."]
+[node name="Barriers" type="Node2D" parent="."]
 
-[node name="Barrier" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 919.637, -117.005 )
-scale = Vector2( 30, 1 )
+[node name="ManyWalls" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 1642.73, 2211.44 )
+rotation = -3.14159
 
-[node name="Barrier2" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( -559.666, 1050.79 )
-scale = Vector2( 1, 22 )
+[node name="Firewalls" parent="Barriers" instance=ExtResource( 8 )]
+position = Vector2( 2209.83, 2211.64 )
+rotation = -3.14159
 
-[node name="Barrier3" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 919.853, 2212.56 )
-scale = Vector2( 30, 1 )
+[node name="2Firewall" parent="Barriers" instance=ExtResource( 9 )]
+position = Vector2( 2436.92, 2211.88 )
+rotation = -3.14159
 
-[node name="Barrier4" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 244.21, 845.665 )
-scale = Vector2( 4, 18 )
+[node name="ManyWalls2" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 2452.92, 42.8865 )
+rotation = 1.5708
 
-[node name="Barrier5" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 1244.7, 1923.97 )
-scale = Vector2( 4, 6 )
+[node name="ManyWalls3" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( 288.104, 28.0705 )
 
-[node name="Barrier6" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 2400.58, 1041.38 )
-scale = Vector2( 1, 22 )
+[node name="2Firewalls" parent="Barriers" instance=ExtResource( 10 )]
+position = Vector2( -505.002, 27.5435 )
 
-[node name="TutorialTexts" type="Node" parent="."]
+[node name="ManyWalls4" parent="Barriers" instance=ExtResource( 1 )]
+position = Vector2( -521.236, 2192.69 )
+rotation = -1.5708
+
+[node name="2Firewalls2" parent="Barriers" instance=ExtResource( 10 )]
+position = Vector2( 71.0189, 156.222 )
+rotation = 1.5708
+
+[node name="2Firewalls3" parent="Barriers" instance=ExtResource( 10 )]
+position = Vector2( 441.104, 1065.2 )
+rotation = -1.5708
+
+[node name="Firewalls2" parent="Barriers" instance=ExtResource( 8 )]
+position = Vector2( 70.4215, 1175.03 )
+rotation = 1.5708
+
+[node name="Firewalls3" parent="Barriers" instance=ExtResource( 8 )]
+position = Vector2( 440.946, 1631.82 )
+rotation = -1.5708
+
+[node name="Firewall3" parent="Barriers" instance=ExtResource( 11 )]
+position = Vector2( 389.998, 1617.95 )
+
+[node name="2Firewall2" parent="Barriers" instance=ExtResource( 9 )]
+position = Vector2( 166.588, 1616.26 )
+
+[node name="Firewalls4" parent="Barriers" instance=ExtResource( 8 )]
+position = Vector2( 1094.23, 1632.66 )
+rotation = 1.5708
+
+[node name="Firewalls5" parent="Barriers" instance=ExtResource( 8 )]
+position = Vector2( 1400.04, 2082.89 )
+rotation = -1.5708
+
+[node name="2Firewall3" parent="Barriers" instance=ExtResource( 9 )]
+position = Vector2( 1302.98, 1647.08 )
+rotation = 3.14159
+
+[node name="TutorialTexts" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireWall" type="TextEdit" parent="TutorialTexts"]
+margin_left = -907.331
+margin_top = 235.485
+margin_right = -754.331
+margin_bottom = 301.485
+rect_scale = Vector2( 3, 3 )
+text = "For gameplay reasons you cannot penetrate the firewalls"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WASD" type="TextEdit" parent="TutorialTexts"]
 margin_top = -50.0
@@ -121,10 +181,10 @@ __meta__ = {
 }
 
 [node name="ShieldPrompt" type="TextEdit" parent="TutorialTexts"]
-margin_left = -930.077
-margin_top = 1781.9
-margin_right = -762.077
-margin_bottom = 1912.9
+margin_left = -958.586
+margin_top = 1787.25
+margin_right = -790.586
+margin_bottom = 1918.25
 rect_scale = Vector2( 3, 3 )
 text = "Right click to activate shield. While shielded you take no damage.
 If you get hit while shielded the cooldown will reset. Use this to your advantage!"
@@ -156,10 +216,10 @@ __meta__ = {
 }
 
 [node name="ShootAntivirus" type="TextEdit" parent="TutorialTexts"]
-margin_left = 1001.31
-margin_top = 1619.33
-margin_right = 1169.31
-margin_bottom = 1798.33
+margin_left = 1011.69
+margin_top = 1592.9
+margin_right = 1179.69
+margin_bottom = 1771.9
 rect_scale = Vector2( 3, 3 )
 text = "The computer system has some defences in place.
 
@@ -177,14 +237,14 @@ __meta__ = {
 }
 
 [node name="Fin" type="TextEdit" parent="TutorialTexts"]
-margin_left = 2105.57
-margin_top = 1463.95
-margin_right = 2273.57
-margin_bottom = 1545.95
+margin_left = 2375.0
+margin_top = 1622.0
+margin_right = 2543.0
+margin_bottom = 1721.0
 rect_scale = Vector2( 3, 3 )
 text = "The tutorial has ended.
 
-Collect the final chip to finish."
+Collect all chips and destroy the required walls to finish."
 readonly = true
 context_menu_enabled = false
 shortcut_keys_enabled = false
@@ -196,20 +256,20 @@ __meta__ = {
 }
 
 [node name="BugBackground" type="ColorRect" parent="TutorialTexts"]
-margin_left = 1374.99
-margin_top = 1832.5
-margin_right = 1466.99
-margin_bottom = 1898.5
+margin_left = 1379.71
+margin_top = 1809.85
+margin_right = 1471.71
+margin_bottom = 1875.85
 color = Color( 0.74902, 0.74902, 0.74902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bug" type="TextureRect" parent="TutorialTexts"]
-margin_left = 1378.24
-margin_top = 1843.56
-margin_right = 1421.24
-margin_bottom = 1883.56
+margin_left = 1382.96
+margin_top = 1816.19
+margin_right = 1425.96
+margin_bottom = 1856.19
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -225,17 +285,17 @@ position = Vector2( 99.2345, 1829.74 )
 position = Vector2( 239.783, 1972.08 )
 
 [node name="Box2" parent="Stuff" instance=ExtResource( 2 )]
-position = Vector2( 1050.59, 1282.13 )
+position = Vector2( 1106.24, 1258.66 )
 
 [node name="AntiVirus" parent="Stuff" instance=ExtResource( 5 )]
-position = Vector2( 1191.23, 1432.47 )
+position = Vector2( 1263.14, 1402.35 )
 direction = Vector2( -1, 2 )
 
 [node name="Box3" parent="Stuff" instance=ExtResource( 2 )]
-position = Vector2( 1090.92, -36.6881 )
+position = Vector2( 1092.51, 226.653 )
 
 [node name="AntiVirus2" parent="Stuff" instance=ExtResource( 5 )]
-position = Vector2( 1234.9, 112.697 )
+position = Vector2( 1236.87, 378.508 )
 direction = Vector2( 1, 0 )
 
 [node name="Box4" parent="Stuff" instance=ExtResource( 2 )]
@@ -246,10 +306,10 @@ position = Vector2( 2179.25, 488.656 )
 direction = Vector2( 1, 0 )
 
 [node name="Box5" parent="Stuff" instance=ExtResource( 2 )]
-position = Vector2( 2033.49, 939.737 )
+position = Vector2( 2055.49, 1173.74 )
 
 [node name="AntiVirus4" parent="Stuff" instance=ExtResource( 5 )]
-position = Vector2( 2177.47, 1089.12 )
+position = Vector2( 2201.47, 1313.12 )
 direction = Vector2( 1, 0 )
 
 [node name="Chip2" parent="Stuff" instance=ExtResource( 3 )]

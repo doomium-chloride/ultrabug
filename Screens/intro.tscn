@@ -70,7 +70,7 @@ __meta__ = {
 visible = false
 frames = SubResource( 1 )
 animation = "claws"
-frame = 7
+frame = 4
 playing = true
 centered = false
 
@@ -96,6 +96,16 @@ one_shot = true
 [node name="Skip" type="Control" parent="."]
 visible = false
 rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Skip"]
+margin_left = 237.0
+margin_top = 129.0
+margin_right = 376.0
+margin_bottom = 212.0
+color = Color( 0, 0, 0, 0.352941 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
