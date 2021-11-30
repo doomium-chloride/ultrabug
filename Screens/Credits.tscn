@@ -17,15 +17,18 @@ __meta__ = {
 }
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 343.905
-margin_top = 124.136
-margin_right = 605.905
-margin_bottom = 185.136
+margin_left = 344.0
+margin_top = 124.0
+margin_right = 574.0
+margin_bottom = 182.0
 rect_scale = Vector2( 3, 3 )
-text = "Art: Matthew Whitta
+text = "Art: RuffinVangarr
 Programming: doomium-chloride
-Music and SFX: CC0 and public domain"
+Music: freepd.com"
 readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 654.0

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/UI/empty-shieldxcf.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/fill-shield.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/PowerCircle.gd" type="Script" id=3]
+
+[node name="ShieldGauge" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_left = 0.156
+anchor_top = 0.278
+anchor_right = 0.156
+anchor_bottom = 0.278
+margin_left = -199.68
+margin_top = -200.16
+margin_right = -107.68
+margin_bottom = -79.16
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blink" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Blink" to="." method="_on_Blink_timeout"]

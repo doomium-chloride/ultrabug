@@ -5,7 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 
-var delay = 2
+var delay = 1
 const max_progress = 100
 var current_progress = 0
 var blink_visible = false
@@ -14,7 +14,7 @@ var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TextureProgress.max_value = max_progress * delay
-	visible = false
+	current_progress = max_progress
 
 #updates delay
 func set_delay(new_delay):
@@ -23,12 +23,8 @@ func set_delay(new_delay):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if current_progress <= 0:
-		visible = false
-	elif current_progress >= $TextureProgress.max_value:
-		visible = blink_visible
-	else:
-		visible = true
+	if current_progress >= $TextureProgress.max_value:
+		reset()
 	
 	if active and current_progress < $TextureProgress.max_value:
 		current_progress += delta * max_progress
@@ -40,7 +36,7 @@ func activate():
 	active = true
 
 func reset():
-	current_progress = 0
+	current_progress = max_progress
 	active = false
 	
 func release():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/voice/at_long_last.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/intro.gd" type="Script" id=2]
@@ -10,13 +10,14 @@
 [ext_resource path="res://Assets/scene/bugman2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/scene/ultrabug.png" type="Texture" id=9]
 [ext_resource path="res://Assets/scene/uploading.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Music/Abstract Anxiety.mp3" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "claws",
-"speed": 10.0
+"speed": 6.0
 } ]
 
 [node name="Intro" type="Control"]
@@ -69,7 +70,7 @@ __meta__ = {
 visible = false
 frames = SubResource( 1 )
 animation = "claws"
-frame = 1
+frame = 7
 playing = true
 centered = false
 
@@ -125,6 +126,10 @@ margin_top = 145.31
 margin_right = 341.357
 margin_bottom = 159.31
 text = "Skip Intro?"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
 
 [connection signal="finished" from="Voices/AtLongLast" to="." method="_on_AtLongLast_finished"]
 [connection signal="finished" from="Voices/Lightswitch" to="." method="_on_Lightswitch_finished"]

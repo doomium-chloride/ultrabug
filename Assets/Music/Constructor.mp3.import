@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Constructor.mp3-8e8ca9b07d5d7854d3f27dfea53f5864.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Constructor.mp3"
+dest_files=[ "res://.import/Constructor.mp3-8e8ca9b07d5d7854d3f27dfea53f5864.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

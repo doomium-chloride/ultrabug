@@ -31,11 +31,11 @@ scale = Vector2( 30, 1 )
 
 [node name="Barrier4" parent="Barriers" instance=ExtResource( 1 )]
 position = Vector2( 244.21, 845.665 )
-scale = Vector2( 1, 18 )
+scale = Vector2( 4, 18 )
 
 [node name="Barrier5" parent="Barriers" instance=ExtResource( 1 )]
-position = Vector2( 1238.71, 1263.22 )
-scale = Vector2( 1, 18 )
+position = Vector2( 1244.7, 1923.97 )
+scale = Vector2( 4, 6 )
 
 [node name="Barrier6" parent="Barriers" instance=ExtResource( 1 )]
 position = Vector2( 2400.58, 1041.38 )
@@ -44,8 +44,9 @@ scale = Vector2( 1, 22 )
 [node name="TutorialTexts" type="Node" parent="."]
 
 [node name="WASD" type="TextEdit" parent="TutorialTexts"]
+margin_top = -50.0
 margin_right = 168.0
-margin_bottom = 132.0
+margin_bottom = 82.0
 rect_scale = Vector2( 3, 3 )
 text = "You are a bug!
 
@@ -63,10 +64,10 @@ __meta__ = {
 }
 
 [node name="Walls and chips" type="TextEdit" parent="TutorialTexts"]
-margin_left = 1.0
-margin_top = 458.0
-margin_right = 169.0
-margin_bottom = 605.0
+margin_left = 6.04541
+margin_top = 357.092
+margin_right = 174.045
+margin_bottom = 504.092
 rect_scale = Vector2( 3, 3 )
 text = "The computer is made up of walls and chips.
 
@@ -82,10 +83,10 @@ __meta__ = {
 }
 
 [node name="Wall and chip ui" type="TextEdit" parent="TutorialTexts"]
-margin_left = -1.0
-margin_top = 916.0
-margin_right = 167.0
-margin_bottom = 1065.0
+margin_left = 10.7726
+margin_top = 808.365
+margin_right = 178.773
+margin_bottom = 957.365
 rect_scale = Vector2( 3, 3 )
 text = "The amount of walls to destroy and chips to collect are displayed on the top right.
 
@@ -101,10 +102,10 @@ __meta__ = {
 }
 
 [node name="TryPrompt" type="TextEdit" parent="TutorialTexts"]
-margin_left = 5.0
-margin_top = 1385.0
-margin_right = 173.0
-margin_bottom = 1516.0
+margin_left = 11.7272
+margin_top = 1263.91
+margin_right = 179.727
+margin_bottom = 1394.91
 rect_scale = Vector2( 3, 3 )
 text = "Try destroying some walls and collecting a chip.
 Left click to shoot.
@@ -119,11 +120,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ShieldPrompt" type="TextEdit" parent="TutorialTexts"]
+margin_left = -930.077
+margin_top = 1781.9
+margin_right = -762.077
+margin_bottom = 1912.9
+rect_scale = Vector2( 3, 3 )
+text = "Right click to activate shield. While shielded you take no damage.
+If you get hit while shielded the cooldown will reset. Use this to your advantage!"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bounce" type="TextEdit" parent="TutorialTexts"]
+margin_left = -389.817
+margin_top = 2160.14
+margin_right = -221.817
+margin_bottom = 2207.14
+rect_scale = Vector2( 3, 3 )
+text = "Bullets bounce 10 times until they disappear"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ShootAntivirus" type="TextEdit" parent="TutorialTexts"]
-margin_left = 997.003
-margin_top = 1665.42
-margin_right = 1165.0
-margin_bottom = 1844.42
+margin_left = 1001.31
+margin_top = 1619.33
+margin_right = 1169.31
+margin_bottom = 1798.33
 rect_scale = Vector2( 3, 3 )
 text = "The computer system has some defences in place.
 
@@ -140,88 +176,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Superweapon" type="TextEdit" parent="TutorialTexts"]
-margin_left = 985.017
-margin_top = 749.885
-margin_right = 1153.02
-margin_bottom = 945.885
-rect_scale = Vector2( 3, 3 )
-text = "You have access to certain super weapons.
-
-Hold right click to charge it, then release to activate the super weapon.
-
-You have \"infect\", \"lag\" and \"stealth\"."
-readonly = true
-context_menu_enabled = false
-shortcut_keys_enabled = false
-virtual_keyboard_enabled = false
-selecting_enabled = false
-wrap_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Infect" type="TextEdit" parent="TutorialTexts"]
-margin_left = 984.0
-margin_top = 273.0
-margin_right = 1152.0
-margin_bottom = 426.0
-rect_scale = Vector2( 3, 3 )
-text = "To switch super weapons use the mousewheel.
-
-Infect turns a weakened enemy to your side.
-An enemy is weakened when it blinks."
-readonly = true
-context_menu_enabled = false
-shortcut_keys_enabled = false
-virtual_keyboard_enabled = false
-selecting_enabled = false
-wrap_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Lag" type="TextEdit" parent="TutorialTexts"]
-margin_left = 2172.0
-margin_top = -55.0
-margin_right = 2340.0
-margin_bottom = 66.0
-rect_scale = Vector2( 3, 3 )
-text = "Lag makes enemies roughly 80% slower.
-
-Milage may vary depending on the computer's scheduler."
-readonly = true
-context_menu_enabled = false
-shortcut_keys_enabled = false
-virtual_keyboard_enabled = false
-selecting_enabled = false
-wrap_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Stealth" type="TextEdit" parent="TutorialTexts"]
-margin_left = 2145.0
-margin_top = 661.0
-margin_right = 2313.0
-margin_bottom = 743.0
-rect_scale = Vector2( 3, 3 )
-text = "Stealth makes you invulnerable and undetectable for 0.5 secs."
-readonly = true
-context_menu_enabled = false
-shortcut_keys_enabled = false
-virtual_keyboard_enabled = false
-selecting_enabled = false
-wrap_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Fin" type="TextEdit" parent="TutorialTexts"]
-margin_left = 2147.52
-margin_top = 1477.43
-margin_right = 2315.52
-margin_bottom = 1559.43
+margin_left = 2105.57
+margin_top = 1463.95
+margin_right = 2273.57
+margin_bottom = 1545.95
 rect_scale = Vector2( 3, 3 )
 text = "The tutorial has ended.
 
@@ -237,20 +196,20 @@ __meta__ = {
 }
 
 [node name="BugBackground" type="ColorRect" parent="TutorialTexts"]
-margin_left = 1366.0
-margin_top = 1831.0
-margin_right = 1458.0
-margin_bottom = 1897.0
+margin_left = 1374.99
+margin_top = 1832.5
+margin_right = 1466.99
+margin_bottom = 1898.5
 color = Color( 0.74902, 0.74902, 0.74902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bug" type="TextureRect" parent="TutorialTexts"]
-margin_left = 1369.25
-margin_top = 1840.56
-margin_right = 1412.25
-margin_bottom = 1880.56
+margin_left = 1378.24
+margin_top = 1843.56
+margin_right = 1421.24
+margin_bottom = 1883.56
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -266,10 +225,10 @@ position = Vector2( 99.2345, 1829.74 )
 position = Vector2( 239.783, 1972.08 )
 
 [node name="Box2" parent="Stuff" instance=ExtResource( 2 )]
-position = Vector2( 879.785, 1361.54 )
+position = Vector2( 1050.59, 1282.13 )
 
 [node name="AntiVirus" parent="Stuff" instance=ExtResource( 5 )]
-position = Vector2( 1027.91, 1537.35 )
+position = Vector2( 1191.23, 1432.47 )
 direction = Vector2( -1, 2 )
 
 [node name="Box3" parent="Stuff" instance=ExtResource( 2 )]

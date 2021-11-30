@@ -12,6 +12,7 @@ func _on_AtLongLast_finished():
 	$Voices/Lightswitch.play()
 	$Images/Bug1.visible = true
 	$Images/ColorRect.visible = false
+	$Music.play()
 
 func _on_Lightswitch_finished():
 	$Timers/LightPause.start()

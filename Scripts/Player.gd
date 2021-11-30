@@ -13,6 +13,8 @@ var was_right = true
 var max_hp = 10
 var hp = max_hp
 var god_mode = false
+var shield_on = false
+onready var gauge = get_node("CanvasLayer/ShieldGauge")
 
 const weapons = [
 	"infect",
@@ -48,11 +50,12 @@ func _input(event):
 		if $MainCooldown.is_stopped():
 			shoot_bullet(get_mouse_pos())
 	if event.is_action_pressed("click_right"):
-		$PowerCircle.activate()
-	if event.is_action_released("click_right"):
-		var success = $PowerCircle.release()
-		if success:
-			use_weapon(get_mouse_pos())
+		if not gauge.active:
+			shield()
+#	if event.is_action_released("click_right"):
+#		var success = gauge.release()
+#		if success:
+#			use_weapon(get_mouse_pos())
 	if event.is_action_pressed("next_weapon"):
 		cycle_weapon(1)
 	if event.is_action_pressed("prev_weapon"):
@@ -84,7 +87,7 @@ func face_mouse():
 	look_at(mouse_pos)
 	if mouse_pos != position:
 		rotation += PI/2
-	$PowerCircle.set_rotation(-rotation)
+	gauge.set_rotation(-rotation)
 
 func cycle_weapon(steps):
 	var num_of_weapons = len(weapons)
@@ -163,11 +166,13 @@ func control_anim(direction, velocity):
 
 
 func _on_StealthTimer_timeout():
-	set_collision_layer_bit(0, true)
-	set_collision_mask_bit(0, true)
-	$AnimatedSprite.modulate.a = 1
+	deactivate_shield()
 
 func take_dmg(dmg, origin = null):
+	if shield_on:
+		gauge.reset()
+		$Bloop.play()
+		return
 	if god_mode:
 		return
 	hp -= dmg
@@ -186,3 +191,16 @@ func check_cheats():
 		collision_layer = 0
 	elif Input.is_action_pressed("get_chips"):
 		Global.emit_signal("add_chip")
+
+func shield():
+	activate_shield()
+	gauge.activate()
+	$StealthTimer.start()
+
+func activate_shield():
+	shield_on = true
+	$Shield.visible = true
+
+func deactivate_shield():
+	shield_on = false
+	$Shield.visible = false

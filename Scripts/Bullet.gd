@@ -4,13 +4,14 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var speed = 1000
+export var speed = 800
 var direction = Vector2.ZERO
 var origin = null
 var dmg = 1
 var bounces = 10
 var bounce_cooldown = false
 var has_bounced = false
+var is_bullet = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +47,9 @@ func bounce(collision):
 	direction.y = jiggled_direction.y
 	
 	if  is_instance_valid(collision.collider) and collision.collider.has_method("take_dmg"):
+#		if collision.collider.get("is_player") == true:
+#			if not collision.collider.shield_on:
+#				clear_self()
 		if has_bounced:
 			collision.collider.take_dmg(dmg)
 		else:

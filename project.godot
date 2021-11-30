@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Bug"
+config/name="Ultrabug"
 run/main_scene="res://Screens/Menu.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://Assets/scene/uploading.png"
+config/icon="res://Assets/gold-bug-1.png"
 
 [autoload]
 

@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-
+var explosion_class = preload("res://Actors/Explosion.tscn")
 export var direction = Vector2()
 var speed = 100
-var max_hp = 4
+var max_hp = 1
 var hp = max_hp
 var low_hp = max_hp/2
 var taken_over = false
@@ -56,6 +56,7 @@ func process_collisions():
 			if $DmgCooldown.is_stopped():
 				collision.collider.take_dmg(dmg)
 				$DmgCooldown.start()
+				die()
 		elif collision.collider.get("is_antivirus") == true:
 			if $DmgCooldown.is_stopped():
 				if collision.collider.get("taken_over") == (not taken_over):
@@ -76,7 +77,7 @@ func take_dmg(dmg, origin = null):
 	if hp <= low_hp && dmg:
 		stuttering = true
 	if hp <= 0:
-		queue_free()
+		die()
 	else:
 		$AudioStreamPlayer.play()
 	if origin != null:
@@ -140,3 +141,9 @@ func gain_aggro():
 
 func has_aggro():
 	return target != null and can_see_target()
+
+func die():
+	var explosion = explosion_class.instance()
+	explosion.position = position
+	get_tree().get_root().add_child(explosion)
+	queue_free()

@@ -35,9 +35,6 @@ position = Vector2( 1300, -200 )
 [node name="Hwall2" parent="Walls" instance=ExtResource( 3 )]
 position = Vector2( 1300, -500 )
 
-[node name="Hwall3" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 1300, -500 )
-
 [node name="Hwall4" parent="Walls" instance=ExtResource( 3 )]
 position = Vector2( 1300, -1040 )
 
@@ -97,4 +94,5 @@ position = Vector2( 1457.66, -1135.4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
 autoplay = true

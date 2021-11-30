@@ -1,7 +1,7 @@
 extends "res://Scripts/BaseMap.gd"
 
 func _ready():
-	walls_needed = 20
+	walls_needed = 50
 	chips_needed = 3
 	next_scene = "res://Maps/Lshape.tscn"
 	update_ui()
