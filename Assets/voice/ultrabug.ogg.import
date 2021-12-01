@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ultrabug.ogg-62771c9e68fb976ca8f786221367bde5.oggstr"
+
+[deps]
+
+source_file="res://Assets/voice/ultrabug.ogg"
+dest_files=[ "res://.import/ultrabug.ogg-62771c9e68fb976ca8f786221367bde5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

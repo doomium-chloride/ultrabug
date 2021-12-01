@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Music/Industrial Matter.mp3" type="AudioStream" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -16,26 +18,64 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 344.0
-margin_top = 124.0
-margin_right = 574.0
-margin_bottom = 182.0
+[node name="Main" type="TextEdit" parent="."]
+margin_left = 40.4142
+margin_top = 94.5858
+margin_right = 270.414
+margin_bottom = 212.586
 rect_scale = Vector2( 3, 3 )
-text = "Art: RuffinVangarr
+text = "Art: Illustrious Arcanist
+Voice acting: RuffinVangarr
 Programming: doomium-chloride
-Music: freepd.com"
+Game design: all of the above
+Music: freepd.com
+SFX: CC0 stuff"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="TextEdit" parent="."]
+margin_left = 809.929
+margin_top = 82.6274
+margin_right = 1039.93
+margin_bottom = 445.627
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Music
+===========================
+
+Kevin MacLeod:
+- Industrial Matter - 152
+- Industrial Matter
+- Sciencenet Theme
+
+Severed Personality:
+- Abstract Anxiety
+
+Frank Nora:
+- ElectroLush
+
+Rafael Krux:
+- Spec Ops
+
+Splintered Gypsy:
+- Mana"
 readonly = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 654.0
-margin_top = 431.0
-margin_right = 709.0
-margin_bottom = 451.0
+margin_left = 447.241
+margin_top = 530.262
+margin_right = 502.241
+margin_bottom = 550.262
 rect_scale = Vector2( 2, 2 )
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

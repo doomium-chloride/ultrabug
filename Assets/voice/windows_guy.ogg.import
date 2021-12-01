@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/windows_guy.ogg-7d67b56ba194d0bd4f662354c65294fd.oggstr"
+
+[deps]
+
+source_file="res://Assets/voice/windows_guy.ogg"
+dest_files=[ "res://.import/windows_guy.ogg-7d67b56ba194d0bd4f662354c65294fd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

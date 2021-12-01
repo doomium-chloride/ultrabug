@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Goodnightmare.ogg-5c8816a83ddd39934cc6f918dae55a7f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Goodnightmare.ogg"
+dest_files=[ "res://.import/Goodnightmare.ogg-5c8816a83ddd39934cc6f918dae55a7f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

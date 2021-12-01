@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Errors/VirusBlocked.png" type="Texture" id=1]
+[ext_resource path="res://Assets/scene/lose_screen.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Crash/Lose.gd" type="Script" id=2]
+[ext_resource path="res://Assets/voice/game_over.ogg" type="AudioStream" id=3]
 
 [node name="LoseScreen" type="Control"]
 anchor_right = 1.0
@@ -12,34 +13,38 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 238.891
-margin_top = 48.4126
-margin_right = 1238.89
-margin_bottom = 848.413
-rect_scale = Vector2( 0.8, 0.8 )
+margin_right = 40.0
+margin_bottom = 40.0
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="LinkButton" parent="."]
-margin_left = 293.162
-margin_top = 449.531
-margin_right = 620.162
-margin_bottom = 558.531
+[node name="Quit" type="Button" parent="."]
+margin_left = 175.871
+margin_top = 475.699
+margin_right = 236.871
+margin_bottom = 495.699
+rect_scale = Vector2( 2, 2 )
+text = "Give up"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Restart" type="LinkButton" parent="."]
-margin_left = 670.963
-margin_top = 449.531
-margin_right = 997.963
-margin_bottom = 558.531
-focus_mode = 2
+[node name="Restart" type="Button" parent="."]
+margin_left = 957.755
+margin_top = 475.699
+margin_right = 1027.76
+margin_bottom = 495.699
+rect_scale = Vector2( 2, 2 )
+text = "Try Again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Quit" to="." method="_on_QuitButton_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]

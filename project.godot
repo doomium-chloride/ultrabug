@@ -13,7 +13,7 @@ config_version=4
 config/name="Ultrabug"
 run/main_scene="res://Screens/Menu.tscn"
 boot_splash/image="res://Assets/scene/uploading.png"
-config/icon="res://Assets/gold-bug-1.png"
+config/icon="res://Assets/gold-bug-2.png"
 
 [autoload]
 
@@ -88,6 +88,11 @@ collision_off={
 get_chips={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":true,"shift":true,"control":true,"meta":false,"command":true,"pressed":false,"scancode":67,"unicode":0,"echo":false,"script":null)
+ ]
+}
+get_walls={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":true,"shift":true,"control":true,"meta":false,"command":true,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
  ]
 }
 

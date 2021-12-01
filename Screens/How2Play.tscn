@@ -92,7 +92,7 @@ margin_top = 235.485
 margin_right = -754.331
 margin_bottom = 301.485
 rect_scale = Vector2( 3, 3 )
-text = "For gameplay reasons you cannot penetrate the firewalls"
+text = "No need to penetrate the firewall when you're already in!"
 readonly = true
 context_menu_enabled = false
 shortcut_keys_enabled = false
@@ -180,14 +180,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShieldPrompt" type="TextEdit" parent="TutorialTexts"]
-margin_left = -958.586
-margin_top = 1787.25
-margin_right = -790.586
-margin_bottom = 1918.25
+[node name="ShieldTactic" type="TextEdit" parent="TutorialTexts"]
+margin_left = -953.0
+margin_top = 1474.0
+margin_right = -785.0
+margin_bottom = 1648.0
 rect_scale = Vector2( 3, 3 )
-text = "Right click to activate shield. While shielded you take no damage.
-If you get hit while shielded the cooldown will reset. Use this to your advantage!"
+text = "Right click to activate your shield, it will grant you a moment of invincibility, correctly timed it can be used to parry projectiles. a successful parry will reset the shields cooldown"
 readonly = true
 context_menu_enabled = false
 shortcut_keys_enabled = false

@@ -1,7 +1,7 @@
 extends Control
 
 
-var next_scene = "res://Screens/Menu.tscn"
+export var next_scene = "res://Screens/Menu.tscn"
 export var disabled = false
 
 func goto_scene():

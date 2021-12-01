@@ -5,7 +5,7 @@
 [ext_resource path="res://SFX/491947__cmilo1269__light-switch.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/voice/the_ultimate.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/voice/brick.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Assets/voice/superbug.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/voice/ultrabug.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/scene/bugman1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/scene/bugman2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/scene/ultrabug.png" type="Texture" id=9]
@@ -70,7 +70,6 @@ __meta__ = {
 visible = false
 frames = SubResource( 1 )
 animation = "claws"
-frame = 4
 playing = true
 centered = false
 

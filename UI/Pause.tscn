@@ -54,7 +54,7 @@ func update_selected_button():
 func _on_Restart_pressed():
 	toggle_pause()
 	Global.emit_signal(\"clean_up\")
-	get_tree().reload_current_scene()
+	Global.goto_scene(Global.last_level)
 "
 
 [node name="Pause" type="Control"]

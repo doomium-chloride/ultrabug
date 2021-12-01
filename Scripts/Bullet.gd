@@ -28,7 +28,8 @@ func process_collisions():
 		bounce(collision)
 
 func clear_self():
-	queue_free()
+	if is_instance_valid(self):
+		queue_free()
 
 func bounce(collision):
 	if bounce_cooldown:

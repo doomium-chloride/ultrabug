@@ -10,6 +10,7 @@ var last_level = null
 var lag = false
 
 var time = 0
+var pause_time = true
 
 signal change_weapon(name)
 signal ready_weapon
@@ -28,6 +29,7 @@ signal clean_up
 signal set_last_level(level)
 signal time(time)
 signal reset_time
+signal pause_time(pause)
 
 
 enum direction {
@@ -47,13 +49,16 @@ func _ready():
 	connect("end_lag", self, "end_lag")
 	connect("set_last_level", self, "_set_last_level")
 	connect("reset_time", self, "reset_time")
+	connect("pause_time", self, "pause_time")
 
 func _process(delta):
-	time += delta
+	if not pause_time:
+		time += delta
 	emit_signal("time", time)
 
 func reset_time():
 	time = 0
+	pause_time = false
 
 func start_lag():
 	lag = true
@@ -92,7 +97,8 @@ func _deferred_goto_scene(path):
 	# Clear and reset some stuff
 	
 	# It is now safe to remove the current scene
-	current_scene.free()
+	if is_instance_valid(current_scene):
+		current_scene.free()
 
 	# Load the new scene.
 	var s = ResourceLoader.load(path)
@@ -111,3 +117,6 @@ func scale2(scale):
 
 func _set_last_level(level):
 	last_level = level
+
+func pause_time(pause):
+	pause_time = pause

@@ -13,6 +13,7 @@ var next_scene = "res://Screens/Win.tscn"
 func _ready():
 	Global.connect("add_chip", self, "add_chip")
 	Global.connect("add_wall_count", self, "add_wall")
+	Global.emit_signal("pause_time", false)
 
 func update_ui():
 	Global.emit_signal("reset_chip", chips_needed)
@@ -20,6 +21,7 @@ func update_ui():
 
 func check_victory():
 	if chips >= chips_needed and walls >= walls_needed:
+		Global.emit_signal("pause_time", true)
 		Global.goto_scene(next_scene)
 
 func add_chip():

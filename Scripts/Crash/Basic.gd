@@ -2,7 +2,7 @@ extends Control
 
 
 var BasicWindow_Class = preload("res://Screens/crash/Component/BasicWIndow.tscn")
-
+onready var next_scene = $Windows/BasicWindow.next_scene
 var pixels = 10
 var pos = rect_position
 export var num_of_windows = 20
@@ -22,6 +22,7 @@ func spawn_new_window():
 	var window = BasicWindow_Class.instance()
 	window.rect_position = pos
 	window.disabled = windows < num_of_windows
+	window.next_scene = next_scene
 	stop_last_window_audio(window)
 	$Windows.add_child(window)
 	windows += 1

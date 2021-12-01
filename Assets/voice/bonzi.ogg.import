@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bonzi.ogg-1d3964c81ea51c9e9739c6b76a536448.oggstr"
+
+[deps]
+
+source_file="res://Assets/voice/bonzi.ogg"
+dest_files=[ "res://.import/bonzi.ogg-1d3964c81ea51c9e9739c6b76a536448.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

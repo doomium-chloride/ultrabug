@@ -191,6 +191,8 @@ func check_cheats():
 		collision_layer = 0
 	elif Input.is_action_pressed("get_chips"):
 		Global.emit_signal("add_chip")
+	elif Input.is_action_pressed("get_walls"):
+		Global.emit_signal("add_wall_count")
 
 func shield():
 	activate_shield()

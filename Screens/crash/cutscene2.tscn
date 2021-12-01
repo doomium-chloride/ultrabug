@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/scene/cs2/1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/scene/cs2/2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/scene/cs2/4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/voice/old_man3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/scene/cs2/3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/voice/old_man2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/voice/old_man4.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/voice/old_man1.ogg" type="AudioStream" id=8]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+func _ready():
+	Global.emit_signal(\"pause_time\", true)
+
+func _on_V1_finished():
+	$Images/TextureRect.visible = false
+	$Images/TextureRect2.visible = true
+	$Voices/V2.play()
+
+
+func _on_V2_finished():
+	$Images/TextureRect2.visible = false
+	$Images/TextureRect3.visible = true
+	$Voices/V3.play()
+
+
+func _on_V3_finished():
+	$Images/TextureRect3.visible = false
+	$Images/TextureRect4.visible = true
+	$Voices/V4.play()
+
+
+func _on_V4_finished():
+	Global.goto_scene(\"res://Maps/Lshape.tscn\")
+"
+
+[node name="Cutscene2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Images" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Images"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Images"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Images"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Images"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voices" type="Node" parent="."]
+
+[node name="V1" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="V2" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 6 )
+
+[node name="V3" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 4 )
+
+[node name="V4" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource( 7 )
+
+[connection signal="finished" from="Voices/V1" to="." method="_on_V1_finished"]
+[connection signal="finished" from="Voices/V2" to="." method="_on_V2_finished"]
+[connection signal="finished" from="Voices/V3" to="." method="_on_V3_finished"]
+[connection signal="finished" from="Voices/V4" to="." method="_on_V4_finished"]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Clock.tscn" type="PackedScene" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
@@ -31,17 +33,28 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-rect_scale = Vector2( 10, 10 )
-text = "you win"
+margin_left = 314.66
+margin_top = 60.3893
+margin_right = 449.66
+margin_bottom = 91.3893
+rect_scale = Vector2( 5, 5 )
+text = "Congratulations!
+You beat the game in"
+
+[node name="Clock" parent="." instance=ExtResource( 1 )]
+margin_left = 450.272
+margin_top = 275.46
+margin_right = 450.272
+margin_bottom = 275.461
+rect_scale = Vector2( 2, 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 201.343
-margin_top = 218.271
-margin_right = 276.343
-margin_bottom = 238.271
-text = "Play again"
+margin_left = 530.836
+margin_top = 495.85
+margin_right = 614.836
+margin_bottom = 515.85
+rect_scale = Vector2( 2, 2 )
+text = "Main menu"
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
